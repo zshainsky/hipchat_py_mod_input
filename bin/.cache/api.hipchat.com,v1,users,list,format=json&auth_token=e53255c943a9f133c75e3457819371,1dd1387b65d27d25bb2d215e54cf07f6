@@ -1,0 +1,17 @@
+status: 200
+strict-transport-security: max-age=31536000
+x-xss-protection: 1; mode=block
+x-ratelimit-reset: 1435182000
+content-type: application/json
+x-hipchat-jobs: Want to help make HipChat better? Apply at hipchat.com/jobs
+ and mention this header.
+date: Wed, 24 Jun 2015 21:39:53 GMT
+connection: keep-alive
+content-location: http://api.hipchat.com/v1/users/list?format=json&auth_token=e53255c943a9f133c75e3457819371
+server: nginx
+content-length: 843
+x-ratelimit-limit: 100
+x-ratelimit-remaining: 88
+x-content-type-options: nosniff
+
+{"users":[{"user_id":2321254,"email":"pleopard93@gmail.com","is_deleted":0,"is_group_admin":0,"name":"Patrick Leopard","mention_name":"PatrickLeopard","photo_url":"https:\/\/secure.gravatar.com\/avatar\/c0caca06cee8906462b617d4958b8c64?s=125&d=https%3A%2F%2Fwww.hipchat.com%2Fimg%2Fsilhouette_125.png&r=g","last_active":0,"created":1434738230,"status":"offline","status_message":"","timezone":"America\/Chicago","title":""},{"user_id":2320091,"email":"zshainsky@gmail.com","is_deleted":0,"is_group_admin":1,"name":"Zack Shainsky","mention_name":"ZackShainsky","photo_url":"https:\/\/secure.gravatar.com\/avatar\/4ecb933eda5315ace020850e499a7331?s=125&d=https%3A%2F%2Fwww.hipchat.com%2Fimg%2Fsilhouette_125.png&r=g","last_active":1435181184,"created":1434723273,"status":"offline","status_message":"","timezone":"America\/Chicago","title":""}]}

@@ -1,0 +1,19 @@
+status: 200
+strict-transport-security: max-age=31536000
+server: nginx
+connection: keep-alive
+-content-encoding: gzip
+x-ratelimit-remaining: 92
+content-location: http://api.hipchat.com/v1/rooms/history?room_id=1646523&date=recent&timezone=PST&format=xml&auth_token=e53255c943a9f133c75e3457819371
+x-content-type-options: nosniff
+content-length: 1558
+x-ratelimit-limit: 100
+x-hipchat-jobs: Want to help make HipChat better? Apply at hipchat.com/jobs
+ and mention this header.
+date: Wed, 24 Jun 2015 19:36:43 GMT
+x-ratelimit-reset: 1435174620
+content-type: text/xml
+x-xss-protection: 1; mode=block
+
+<?xml version="1.0" encoding="utf-8"?>
+<messages><message><date>2015-06-19T11:23:57-0700</date><from><name>HipChat</name><user_id>api</user_id></from><message>Hi @ZackShainsky, welcome to HipChat!</message></message><message><date>2015-06-19T11:23:59-0700</date><from><name>HipChat</name><user_id>api</user_id></from><message>This is your first chat room. Rooms are like instant messaging but made for groups. You can create as many as you like, and they can be public or private. They're great for projects, teams, or just for fun.</message></message><message><date>2015-06-19T11:24:06-0700</date><from><name>HipChat</name><user_id>api</user_id></from><message>You can paste links to content like YouTube videos: https://www.youtube.com/watch?v=fcggeWCVs-0</message></message><message><date>2015-06-19T11:24:14-0700</date><from><name>HipChat</name><user_id>api</user_id></from><message>or Tweets: https://twitter.com/HipChat/status/461675235469557760</message></message><message><date>2015-06-19T11:24:19-0700</date><from><name>HipChat</name><user_id>api</user_id></from><message>It's pretty lonely in here. Why don't you invite a teammate to help you give HipChat a try? &lt;a href="https://www.hipchat.com/sign_up/add_users"&gt;Invite someone&lt;/a&gt;.</message></message><message><date>2015-06-19T11:24:24-0700</date><from><name>HipChat</name><user_id>api</user_id></from><message>I'd love to tell you more about what you can do with HipChat. You can @-mention me by typing @HipChat and I'll tell you what HipChat can do!</message></message></messages>
