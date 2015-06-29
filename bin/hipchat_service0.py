@@ -53,26 +53,26 @@ class ModinputHipchat(Script):
         
 
     def stream_events(self, inputs, ew):
-        http = httplib2.Http(".cache")
-        event = Event()
-        event.index = "hipchat"
-        event.sourceType = "json"
-        while 1:
-            for input_name, input_item in inputs.inputs.iteritems():
-            	# Spin up a thread for each input --- Why do we have queues??
-            	# Sleep for input_item["duration"]
-            	# Requery for data
-            	# Sleep...
-                rest_endpoint = input_item["rest_endpoint"]
-                (resp_headers, content) = http.request(rest_endpoint, "GET")
+		http = httplib2.Http(".cache")
+		event = Event()
+		event.index = "hipchat"
+		event.sourceType = "json"
+		for input_name, input_item in inputs.inputs.iteritems():
+			rest_endpoint = input_item["rest_endpoint"]
+			(resp_headers, content) = http.request(rest_endpoint, "GET")
 
-                event.stanza = input_name
-                event.data = content
-                ew.write_event(event)
-            print "Sleeping...."
-            time.sleep(10)
-            print "Done Sleeping!!"
-
+			event.stanza = input_name
+			event.data = content
+			ew.write_event(event)
+                
 
 if __name__ == "__main__":
     sys.exit(ModinputHipchat().run(sys.argv))
+
+
+
+
+
+
+
+

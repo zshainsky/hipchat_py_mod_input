@@ -32,7 +32,7 @@ class HipChatCollectionJob(jf.Job):
 
     def __call__(self):
         config = self._config
-        #_LOGGER.debug("Start collecting from %s.", config["name"])
+        _LOGGER.debug("Start collecting from %s.", config["name"])
         print "Start collecting from %s.", config["name"]
         idx = config.get("index", "hipchat")
         host = config["host"]
@@ -73,6 +73,7 @@ class HipChatJobFactory(jf.JobFactory):
         job["event_writer"] = self._event_writer
         job["state_store"] = ss.StateStore(
             job, appname, use_kv_store=job.get("use_kv_store"))
-        hipchat = self._rest_to_cls[job["rest_endpoint"]](job)
+        hipchat = self._rest_to_cls["users"](job)
+        #job["rest_endpoint"]
         print "Created hipchat job"
         return HipChatCollectionJob(job["rest_endpoint"], job, hipchat.collect_data)

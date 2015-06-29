@@ -30,7 +30,7 @@ class HipChatConfig(conf.TAConfig):
         #print stanza_configs
         if not stanza_configs:
             return None, None
-        #print self.meta_configs, self.stanza_configs
+        print self.meta_configs, self.stanza_configs
         return self.meta_configs, self.stanza_configs
 
     def _get_default_configs(self):

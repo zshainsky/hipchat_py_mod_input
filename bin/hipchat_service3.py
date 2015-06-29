@@ -7,6 +7,7 @@ import xml.etree.ElementTree as ET
 import logging
 import os.path as op
 import Queue
+import traceback
 import time
 
 #import json
@@ -152,11 +153,20 @@ def _get_file_change_handler(data_loader, meta_configs):
 
 def run():
 	try:
-		meta_configs, stanza_configs = _get_hipchat_configs()
+		#meta_configs, stanza_configs = _get_hipchat_configs()
+		meta_configs = {'server_uri': u'https://127.0.0.1:8089', 'server_host': u'zshainsky-mbpr.local', 'session_key': u'kB3aBRF94mvJnkItzMhmgt8napohyCNqXTNhJyyBDh7LWUIyrWWfH_VQfRASnAuPCBT7fotJavQmJl9MQlh2B4OCJeuvylSH21vffwHHZHDJk1525naDk13', 'checkpoint_dir': u'/opt/versions/Splunk_ta_project/var/lib/splunk/modinputs/hipchat_service'}
+		stanza_configs = [{u'host': u'zshainsky-mbpr.dfw.splunk.com', u'rest_endpoint': u'http://api.hipchat.com/v1/users/list?format=json&auth_token=e53255c943a9f133c75e3457819371', u'disabled': u'0', u'index': u'hipchat', 'name': u'hipchat_service://Bleh', u'duration': u'30'}]
+
+		print meta_configs, stanza_configs
+		print type(meta_configs), type(stanza_configs)
 	except Exception as ex:
-		_LOGGER.error("Failed to setup config for Box TA: %s", ex.message)
+		_LOGGER.error("Failed to setup config for HipChat TA: %s", ex.message)
 		_LOGGER.error(traceback.format_exc())
 		raise
+
+	if not stanza_configs:
+		print "Return: not Stanza_Configs1"
+		return
 
 	writer = event_writer.EventWriter()
 	job_src = ModinputJobSource(stanza_configs)

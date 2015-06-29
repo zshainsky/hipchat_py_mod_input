@@ -82,6 +82,7 @@ class JobScheduler(object):
             try:
                 jobs = job_factory.get_jobs()
             except Exception:
+                print "Fialed to get jobs, reason=%s", traceback.format_exc()
                 _LOGGER.error("Failed to get jobs, reason=%s",
                               traceback.format_exc())
             else:

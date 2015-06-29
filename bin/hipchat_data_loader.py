@@ -114,16 +114,16 @@ class HipChatBase(object):
                  checkpoint_dir, proxy_url, proxy_username, proxy_password
         """
 
-        self.access_token = config["access_token"]
-        self.config = config
-        self.conf_mgr = conf.ConfManager(self.config["server_uri"],
-                                         self.config["session_key"])
+        #self.access_token = config["access_token"]
+        #self.config = config
+        #self.conf_mgr = conf.ConfManager(self.config["server_uri"],
+        #                                 self.config["session_key"])
         self._lock = threading.Lock()
         self._stopped = False
         self.headers = {
             "Accept-Encoding": "gzip",
-            "Accept": "application/json",
-            "Authorization": "Bearer {0}".format(config["access_token"]),
+            "Accept": "application/json"#,
+            #"Authorization": "Bearer {0}".format(config["access_token"]),
         }
         self.http = None
         print "PRINTING SELF FROM HIPCHAT_DATA_LOADER.py:", self
@@ -347,9 +347,7 @@ class HipChatUsers(HipChatBase):
     time_fmt = "%Y-%m-%dT%H:%M:%S"
 
     def __init__(self, config):
-        if config["record_count"] > 500:
-            config["record_count"] = 500
-        super(BoxEvent, self).__init__(config)
+        super(HipChatUsers, self).__init__(config)
         self._last_created_before = None
 
     def _do_expiration_check(self):
